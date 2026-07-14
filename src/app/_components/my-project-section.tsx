@@ -1,140 +1,240 @@
+"use client";
 import Image from "next/image";
 import orionMobile from "../../../public/img/origon/orion-mobile.png";
 import orionTablet from "../../../public/img/origon/orion-tablet.png";
-import myfaMobile from "../../../public/img/myfa/myfa-mobile.png";
-import myfaEditor from "../../../public/img/myfa/myfa-editor.png";
-import squirrel from "../../../public/img/squirrel/quirrel.png"
+import myfaMobile from "../../../public/img/myfa/myfa-mobile.webp";
+import myfaEditor from "../../../public/img/myfa/myfa-editor.webp";
+import squirrel from "../../../public/img/squirrel/quirrel.png";
+import ecommer from "../../../public/img/ecommer/ecommer.webp";
+import jobconnect from "../../../public/img/jobconnect/jobconnect.webp";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
-const content = [
+type ProjectLink = {
+  at: string;
+  url: string;
+};
+
+type Project = {
+  title: string;
+  images: { src: typeof orionMobile; alt: string }[];
+  status: number;
+  summary: string[];
+  meta: string;
+  project: ProjectLink | null;
+  deploy: ProjectLink | null;
+};
+
+const webDevQuests: Project[] = [
   {
-    title: "PERSONAL PROJECT: \nORION RING LANDING PAGE",
+    title: "ORION RING LANDING PAGE",
     images: [
       { src: orionMobile, alt: "orion-mobile" },
-      { src: orionTablet, alt: "orion-tablet" }
+      { src: orionTablet, alt: "orion-tablet" },
     ],
+    status: 100,
+    meta: "Stack: Next.js, Tailwind CSS, Framer Motion, Google Sheets API | Role: Solo Project",
     summary: [
-      "Sử dụng NextJS để tạo giao diện.",
-      "Tối ưu hoạt ảnh và tài nguyên (hình ảnh) chuẩn SEO",
-      "Kết nối đến Google Sheet để lưu thông tin đăng ký."
+      "A highly responsive landing page for a fictional product, built with Next.js App Router.",
+      "Implemented lazy-loaded animations and optimized image assets to achieve 90+ Lighthouse performance scores.",
+      "Integrated Google Sheets as a serverless backend for registration form submissions, eliminating the need for an external API database.",
     ],
     project: {
       at: "GitHub",
-      url: "https://github.com/caonhathao/galaxy-ring-landing-page"
+      url: "https://github.com/caonhathao/galaxy-ring-landing-page",
     },
     deploy: {
       at: "Vercel",
-      url: "https://orion-ring-landing-page.vercel.app/"
+      url: "https://orion-ring-landing-page.vercel.app/",
     },
-    isReverse: false
   },
   {
-    title: "PERSONAL PROJECT: \n FAMILY TREE MANAGEMENT",
+    title: "FAMILY TREE MANAGEMENT",
     images: [
       { src: myfaEditor, alt: "myfa-editor" },
-      { src: myfaMobile, alt: "myfa-mobile" }
+      { src: myfaMobile, alt: "myfa-mobile" },
     ],
+    status: 75,
+    meta: "Stack: Next.js, NestJS, Dagre.js, Editor.js, PostgreSQL | Role: Solo Project — In active development",
     summary: [
-      "NextJS đóng vai trò tạo client-server side.",
-      "Tối ưu hoạt ảnh và tài nguyên (hình ảnh) chuẩn SEO",
-      "Người dùng có thể tạo nhóm, mời thành viên, quản lí gia phả tùy theo vai trò.",
-      "Tạo sơ đồ gia phả dễ dàng với thư viện Dagre.js.",
-      "Dễ dàng chỉnh sửa bài đăng hệ thống với thư viện Editor.js.",
-      "Dự án tiếp tục phát triển để trở thành nơi lưu giữ kỉ niệm gia đình."
+      "A full-stack web application designed for creating and managing complex family trees with role-based permissions.",
+      "Built an interactive, dynamic graph visualization using Dagre.js to render generational relationships clearly.",
+      "Integrated Editor.js for a rich-text posting system allowing family members to preserve memories.",
     ],
     project: {
       at: "GitHub",
-      url: "https://github.com/caonhathao/family-tree-management"
+      url: "https://github.com/caonhathao/family-tree-management",
     },
     deploy: {
       at: "Vercel",
-      url: "https://family-tree-management.vercel.app/"
+      url: "https://family-tree-management.vercel.app/",
     },
-    note: "Dự án vẫn đang tiếp tục phát triển và hoàn thiện",
-    isReverse: true
   },
   {
-    title: "PERSONAL PROJECT: \n SQUIRREL ADVENTURE",
-    images: [
-      { src: squirrel, alt: "squirrel-mobile-placeholder" }, 
-    ],
+    title: "E-COMMERCE PLATFORM",
+    images: [{ src: ecommer, alt: "e-commerce platform desktop mockup" }],
+    status: 90,
+    meta: "Stack: Next.js, React, Node.js | Role: Frontend Developer | Team Project",
     summary: [
-      "Được xây dựng trên nền tảng Unity",
-      "Game mang phong cách đồ họa pixel 2D, thuộc thể loại Platform.",
-      "Game kể về một chú sóc nâu đang trên đường vượt qua mọi thử thách để đến được ngôi nhà của hạnh phúc."
+      "Contributed to the development of the main homepage, product detail pages, and administrative dashboard modules.",
+      "Implemented a responsive product grid with dynamic filtering, managed global shopping cart state, and built CRUD interfaces for inventory management.",
+    ],
+    project: {
+      at: "GitHub",
+      url: "https://github.com/tamthong1115/ecommerce_nexjts",
+    },
+    deploy: {
+      at: "Vercel",
+      url: "https://ecommerce-nexjts.vercel.app/",
+    },
+  },
+];
+
+const gameDevQuests: Project[] = [
+  {
+    title: "SQUIRREL ADVENTURE",
+    images: [{ src: squirrel, alt: "squirrel-adventure" }],
+    status: 65,
+    meta: "Stack: Unity, C#, Aseprite | Role: Solo Project",
+    summary: [
+      "A passion project built to master OOP (Object-Oriented Programming) and state management in game development.",
+      "Designed custom player controller physics, obstacle avoidance, level progression, and sprite animation state machines in C#.",
     ],
     project: null,
     deploy: {
       at: "itch.io",
-      url: "https://caonhathao.itch.io/the-squirrel-adventure"
+      url: "https://caonhathao.itch.io/the-squirrel-adventure",
     },
-    isReverse: false
-  }
+  },
 ];
+
+const aiBackendQuests: Project[] = [
+  {
+    title: "JOBCONNECT RECRUITMENT SYSTEM",
+    images: [{ src: jobconnect, alt: "jobconnect-recruitment" }],
+    status: 100,
+    meta: "Stack: NestJS, Python, Vector Database, OpenAI API | Role: Backend & AI Engineer | Team Project",
+    summary: [
+      "Stepped outside my primary frontend role to architect and build the AI-powered document processing pipeline.",
+      "Successfully implemented a Retrieval-Augmented Generation (RAG) system for smart resume screening and automated candidate scoring.",
+    ],
+    project: {
+      at: "GitHub",
+      url: "https://github.com/caonhathao/JobConnect-recruitment-system-be",
+    },
+    deploy: null,
+  },
+];
+
+const categories = [
+  { label: "WEB DEVELOPMENT", quests: webDevQuests },
+  { label: "GAME DEVELOPMENT", quests: gameDevQuests },
+  { label: "AI & BACKEND", quests: aiBackendQuests },
+];
+
+let globalQuestIndex = 0;
 
 const MyProjectSection = () => {
   return (
     <div
       id="my-project"
-      className="w-[70%] flex flex-col justify-center items-center gap-5 my-5"
+      className="w-[70%] flex flex-col justify-center items-center gap-8 my-5"
     >
-      <h2 className="text-xl font-bold">MY PROJECTS</h2>
+      <h2 className="text-xl font-bold">COMPLETED QUESTS</h2>
 
-      {content.map((item, index) => (
-        <section
-          key={index}
-          className={`shadow-lg rounded-lg w-full h-full flex items-center gap-5 p-5 ${
-            item.isReverse ? "flex-row-reverse justify-start" : "flex-row justify-start"
-          }`}
-        >
-          {/* Khối hiển thị hình ảnh */}
-          <div className="w-[50%] flex flex-row justify-center gap-3">
-            {item.images.map((img, imgIdx) => (
-              <Image
-                key={imgIdx}
-                src={img.src}
-                height={450}
-                alt={img.alt}
-                className="border-2 rounded-2xl"
-              />
-            ))}
-          </div>
+      {categories.map((category) => (
+        <div key={category.label} className="w-full flex flex-col gap-5">
+          <h3 className="font-pixel text-sm text-center text-muted-foreground tracking-widest">
+            — {category.label} —
+          </h3>
 
-          {/* Khối thông tin văn bản */}
-          <div className="w-[50%] h-full flex flex-col justify-start items-start gap-3">
-            <h2 className="font-bold whitespace-pre-line">{item.title}</h2>
-            
-            <div className="px-5">
-              <p className="font-medium">Summary</p>
-              <ul className="list-disc px-5">
-                {item.summary.map((text, textIdx) => (
-                  <li key={textIdx}>{text}</li>
-                ))}
-              </ul>
-            </div>
+          {category.quests.map((item, index) => {
+            const questNum = ++globalQuestIndex;
+            const isReverse = questNum % 2 === 0;
 
-            {item.project && (
-              <div>
-                Project at:{" "}
-                <a href={item.project.url} className="text-blue-600 hover:underline">
-                  {item.project.at}
-                </a>
-              </div>
-            )}
+            return (
+              <section
+                key={questNum}
+                className={`rounded-sm border-2 border-dashed w-full flex items-center gap-5 p-5 ${
+                  isReverse
+                    ? "flex-row-reverse justify-start"
+                    : "flex-row justify-start"
+                }`}
+              >
+                <div className="w-[50%] flex flex-row justify-center gap-3 border-4 border-black dark:border-zinc-700 bg-black p-3 rounded-none">
+                  {item.images.map((img, imgIdx) => (
+                    <Image
+                      key={imgIdx}
+                      src={img.src}
+                      height={450}
+                      alt={img.alt}
+                      className="border-2"
+                    />
+                  ))}
+                </div>
 
-            {item.deploy && (
-              <div>
-                Deploy at:{" "}
-                <a href={item.deploy.url} className="text-blue-600 hover:underline">
-                  {item.deploy.at}
-                </a>
-              </div>
-            )}
+                <div className="w-[50%] h-full flex flex-col justify-start items-start gap-3">
+                  <h2 className="font-bold whitespace-pre-line">
+                    {`QUEST #${index < 10 ? "0" : ""}${index + 1}`}
+                  </h2>
+                  <h2 className="font-bold whitespace-pre-line">
+                    {item.title}
+                  </h2>
+                  <div className="h-5 w-[80%] flex flex-row justify-between items-center gap-3">
+                    <div className="w-full h-full flex flex-row justify-start items-center gap-3">
+                      <p className="whitespace-nowrap">STATUS</p>
+                      <div className="border-2 border-input w-full h-full">
+                        <div
+                          style={{ width: `${item.status}%` }}
+                          className="h-full bg-green-500"
+                        ></div>
+                      </div>
+                    </div>
+                    <p>{item.status}%</p>
+                  </div>
+                  <div>
+                    <p className="font-medium">MISSION BRIEFING:</p>
+                    <ul className="px-5">
+                      {item.summary.map((text, textIdx) => (
+                        <li
+                          key={textIdx}
+                          className="flex flex-row justify-start items-center gap-3"
+                        >
+                          <MdOutlineKeyboardArrowRight />
+                          {text}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <p className="text-xs text-muted-foreground italic">
+                    {item.meta}
+                  </p>
 
-            {item.note && (
-              <p className="italic text-sm text-gray-600">{item.note}</p>
-            )}
-          </div>
-        </section>
+                  <div>
+                    <p>REWARDS (LINKS):</p>
+                    <div className="flex flex-row gap-3">
+                      {item.project && (
+                        <a
+                          href={item.project.url}
+                          className="text-blue-600 hover:underline border-2 border-current px-3 py-1 font-bold hover:bg-black hover:text-white dark:hover:bg-emerald-400 dark:hover:text-black transition-all active:translate-y-0.5"
+                        >
+                          {item.project.at}
+                        </a>
+                      )}
+                      {item.deploy && (
+                        <a
+                          href={item.deploy.url}
+                          className="text-blue-600 hover:underline border-2 border-current px-3 py-1 font-bold hover:bg-black hover:text-white dark:hover:bg-emerald-400 dark:hover:text-black transition-all active:translate-y-0.5"
+                        >
+                          {item.deploy.at}
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </section>
+            );
+          })}
+        </div>
       ))}
     </div>
   );
