@@ -54,11 +54,12 @@ const webDevQuests: Project[] = [
       { src: myfaMobile, alt: "myfa-mobile" },
     ],
     status: 75,
-    meta: "Stack: Next.js, NestJS, Dagre.js, Editor.js, PostgreSQL | Role: Solo Project — In active development",
+    meta: "Stack: Next.js, Dagre.js, Editor.js, PostgreSQL | Role: Solo Project — In active development",
     summary: [
       "A full-stack web application designed for creating and managing complex family trees with role-based permissions.",
       "Built an interactive, dynamic graph visualization using Dagre.js to render generational relationships clearly.",
-      "Integrated Editor.js for a rich-text posting system allowing family members to preserve memories.",
+      "Integrated Editor.js for a rich-text posting system allowing admin update or create new blogs and tutors.",
+      "Authentication with password or by google account."
     ],
     project: {
       at: "GitHub",
@@ -75,8 +76,8 @@ const webDevQuests: Project[] = [
     status: 90,
     meta: "Stack: Next.js, React, Node.js | Role: Frontend Developer | Team Project",
     summary: [
-      "Contributed to the development of the main homepage, product detail pages, and administrative dashboard modules.",
-      "Implemented a responsive product grid with dynamic filtering, managed global shopping cart state, and built CRUD interfaces for inventory management.",
+      "Contributed to the development of the main homepage, product detail pages (UI) and APIs",
+      "Contributed to the development of the administrative dashboard modules.",
     ],
     project: {
       at: "GitHub",
@@ -112,7 +113,7 @@ const aiBackendQuests: Project[] = [
     title: "JOBCONNECT RECRUITMENT SYSTEM",
     images: [{ src: jobconnect, alt: "jobconnect-recruitment" }],
     status: 100,
-    meta: "Stack: NestJS, Python, Vector Database, OpenAI API | Role: Backend & AI Engineer | Team Project",
+    meta: "Stack: NodeJS, Vector Database, PostgreSQL, Google AI Studio | Role: Backend & AI Engineer | Team Project",
     summary: [
       "Stepped outside my primary frontend role to architect and build the AI-powered document processing pipeline.",
       "Successfully implemented a Retrieval-Augmented Generation (RAG) system for smart resume screening and automated candidate scoring.",
