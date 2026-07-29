@@ -63,14 +63,14 @@ const TechSection = () => {
   return (
     <section
       id="my-tech"
-      className="p-5 w-[70%] flex flex-col justify-between items-center gap-3 my-15"
+      className="p-5 w-full lg:w-[70%] flex flex-col justify-between items-center gap-3 my-15"
     >
       <h2 className="text-xl font-bold">MY SKILLS</h2>
-      <div className="w-full grid grid-cols-3 grid-rows-3 gap-5">
+      <div className="w-full grid grid-cols-1 grid-rows-3 md:grid-cols-2 lg:grid-cols-3 items-center gap-5">
         {content.map((value, index) => (
           <div
             key={`tech-card-${index}`}
-            className="w-full flex flex-col justify-center items-center gap-3 border-4 border-black bg-zinc-900 text-input p-5"
+            className="w-full flex flex-col justify-center items-center gap-3 border-4 border-black bg-zinc-900 text-input p-5 place-self-stretch"
           >
             <div className="h-5 w-80 flex flex-row justify-between items-center gap-3">
               <div className="w-full h-full flex flex-row justify-start items-center gap-3">

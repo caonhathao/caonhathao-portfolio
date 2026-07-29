@@ -154,7 +154,7 @@ const MyProjectSection = () => {
   return (
     <div
       id="my-project"
-      className="w-[70%] flex flex-col justify-center items-center gap-8 my-5"
+      className="w-full lg:w-[70%] flex flex-col justify-center items-center gap-8 my-5"
     >
       <h2 className="text-xl font-bold">COMPLETED QUESTS</h2>
 
@@ -173,11 +173,11 @@ const MyProjectSection = () => {
                 key={questNum}
                 className={`rounded-sm border-2 border-dashed w-full flex items-center gap-5 p-5 ${
                   isReverse
-                    ? "flex-row-reverse justify-start"
-                    : "flex-row justify-start"
+                    ? "flex-col lg:flex-row-reverse justify-start"
+                    : "flex-col lg:flex-row justify-start"
                 }`}
               >
-                <div className="w-[50%] flex flex-row justify-center gap-3 border-4 border-black dark:border-zinc-700 bg-black p-3 rounded-none">
+                <div className="w-full lg:w-[50%] flex flex-col md:flex-row justify-center items-center gap-3 border-4 border-black dark:border-zinc-700 bg-black p-3 rounded-none">
                   {item.images.map((img, imgIdx) => (
                     <Image
                       key={imgIdx}
@@ -189,7 +189,7 @@ const MyProjectSection = () => {
                   ))}
                 </div>
 
-                <div className="w-[50%] h-full flex flex-col justify-start items-start gap-3">
+                <div className="w-full lg:w-[50%] h-full flex flex-col justify-start items-start gap-3">
                   <h2 className="font-bold whitespace-pre-line">
                     {`QUEST #${index < 10 ? "0" : ""}${index + 1}`}
                   </h2>
