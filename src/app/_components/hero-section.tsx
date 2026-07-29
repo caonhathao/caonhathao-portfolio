@@ -17,7 +17,7 @@ const HeroSection = () => {
         alongside a professional team.
       </p>
 
-      <div className="flex flex-row gap-4 mt-2">
+      <div className="grid grid-cols-2 grid-rows-2 lg:grid-cols-4 lg:grid-rowa-1 gap-3 mt-2">
         <a
           href="https://github.com/caonhathao"
           target="_blank"

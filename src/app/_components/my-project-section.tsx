@@ -7,6 +7,7 @@ import myfaEditor from "../../../public/img/myfa/myfa-editor.webp";
 import squirrel from "../../../public/img/squirrel/quirrel.png";
 import ecommer from "../../../public/img/ecommer/ecommer.webp";
 import jobconnect from "../../../public/img/jobconnect/jobconnect.webp";
+import dcorp from "../../../public/img/d-corp/d-corp.png";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 type ProjectLink = {
@@ -104,6 +105,21 @@ const gameDevQuests: Project[] = [
     deploy: {
       at: "itch.io",
       url: "https://caonhathao.itch.io/the-squirrel-adventure",
+    },
+  },
+  {
+    title: "D CORP: DEMON SPLAYER",
+    images: [{ src: dcorp, alt: "d-corp-demon-slayer" }],
+    status: 10,
+    meta: "Stack: Unity, C#, Aseprite | Role: Solo Project",
+    summary: [
+      "A passion project built to master OOP (Object-Oriented Programming) and state management in game development.",
+      "Designed custom player controller physics, obstacle avoidance, level progression, and sprite animation state machines in C#.",
+    ],
+    project: null,
+    deploy: {
+      at: "itch.io",
+      url: "https://caonhathao.itch.io/d-corp-demon-layer-demo-gameplay",
     },
   },
 ];
