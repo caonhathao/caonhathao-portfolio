@@ -22,9 +22,9 @@ const pressStart2P = Press_Start_2P({
 });
 
 export const metadata: Metadata = {
-  title: "Cao Nhat Hao | Frontend Developer Portfolio",
+  title: "Cao Nhat Hao | Developer Portfolio",
   description:
-    "Portfolio of Cao Nhat Hao, a Frontend Developer specializing in Next.js, React, and interactive web experiences. Looking for Frontend Intern opportunities.",
+    "This portfolio is showing my achievements!",
 };
 
 export default function RootLayout({
